@@ -1,5 +1,5 @@
 var userNum = parseInt(prompt('Scegli un numero da uno a cinque'));
-var userChoice = prompt('Scegli pari o dispari?')
+var userChoice = prompt('Scegli pari o dispari?').toLowerCase();
 var computerNum = randomNum(1, 5);
 var somma = userNum + computerNum;
 
@@ -11,14 +11,21 @@ function randomNum(min, max) {
 
 function isEvenOrOdd(somma) {
     if (somma % 2 == 0) {
-        return 'Pari'
+        return 'pari'
     } else {
-        return 'Dispari'
+        return 'dispari'
     }
 }
 
+var isEvenOrOddSum = isEvenOrOdd(somma)
 
-console.log(isEvenOrOdd, somma)
+if (userChoice == isEvenOrOddSum) {
+    alert('Hai vinto!')
+} else {
+    alert('Hai perso!')
+}
 
+
+console.log(isEvenOrOddSum)
 
 console.log(userNum, randomNum, userChoice)
