@@ -1,7 +1,7 @@
 var userNum = parseInt(prompt('Scegli un numero da uno a cinque'));
-
 var userChoice = prompt('Scegli pari o dispari?')
-
+var computerNum = randomNum(1, 5);
+var somma = userNum + computerNum;
 
 function randomNum(min, max) {
     min = Math.ceil(min);
@@ -9,14 +9,16 @@ function randomNum(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-var randomNum = randomNum(1, 5);
-
-if (userChoice === 'pari' && userNum + randomNum % 2 == 0) {
-    alert('Hai vinto!')
-} else if (userChoice === 'dispari' && userNum + randomNum % 2 >= 1) {
-    alert('Hai vinto!')
-} else {
-    alert('Hai perso!')
+function isEvenOrOdd(somma) {
+    if (somma % 2 == 0) {
+        return 'Pari'
+    } else {
+        return 'Dispari'
+    }
 }
+
+
+console.log(isEvenOrOdd, somma)
+
 
 console.log(userNum, randomNum, userChoice)
